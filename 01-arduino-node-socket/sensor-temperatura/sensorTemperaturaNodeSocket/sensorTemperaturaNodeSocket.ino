@@ -1,17 +1,21 @@
 // Entradas 
 int sensorLuz = 15;
-int inicioFinPulsador = 2, emergenciaPulsador = 3;
+int inicioFinPulsador = 2, testPulsador = 3;
 // Actuadores
 int actuador1 = 49, actuador2 = 51, actuador3 = 53;
-// Variables de Estado 
-bool estado = false; // Inicia el proceso por defecto en false (NO SENSANDO)
-int valSensor; // Variable para almacenar el valor 
+// Indicador de estadoServicioServicio
+int indicadorOn = 31;
+// Variables de estadoServicioServicio 
+bool estadoServicio = false; // Inicia el proceso por defecto en false (NO SENSANDO)
+int valSensor; // Variable para almacenar el valor del sensor de luz
+int refSensor = 1010
+
 
 void setup() {
   // Definición de entradas 
   pinMode(sensorLuz,INPUT);
-  pinMode(inicioFinPulsador,INPUT_PULLUP);
-  pinMode(emergenciaPulsador,INPUT);
+  pinMode(inicioFinPulsador,INPUT);
+  pinMode(testPulsador,INPUT);
 
   // Entrada mediante Interrupciones (Eventos en Js)
 
@@ -19,6 +23,9 @@ void setup() {
   pinMode(actuador1, OUTPUT);
   pinMode(actuador2, OUTPUT);
   pinMode(actuador3, OUTPUT);
+
+  // Definición de indicadores
+  pinMode(indicadorOn, OUTPUT);
 
   // Inicialización de los actuadores y de la lectura del sensor principal
   digitalWrite(actuador1,HIGH);
@@ -31,33 +38,85 @@ void setup() {
 
   // Interrupciones
   // attachInterrupt(digitalPinToInterrupt(pin), callback, mode)
-  attachInterrupt(digitalPinToInterrupt(inicioFinPulsador), cambiarEstado, RISING);
+  attachInterrupt(digitalPinToInterrupt(inicioFinPulsador), cambiarEstadoServicio, RISING);
   // Pines de interrupciones en Arduino Mega 2560 2,13,18,19,20,21
   // https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/
+
 }
 
 void loop() {
-  if(estado){
+  if(estadoServicio){
     valSensor = analogRead(sensorLuz);
-      Serial.println(valSensor); 
-      delay(500); 
+    Serial.println(valSensor); 
+    delay(500); 
   }
-
-  if ( Serial.available() ) {
+ 
+  if ( Serial.available() > 0 ) {
 // read the character and do what you need 
     //Serial.print("Incoming Message: ");
-    Serial.println(Serial.read());
-    return; // just runs loop() again immediately
+    int inByte = Serial.read();
+    switch (inByte) {
+      case 'a':// Parar el envío por el monitor serial
+        estadoServicio = false;
+        apagarActuadores();
+        digitalWrite(indicadorOn,LOW);
+        break;
+
+      case 'b': // Reanudar el envío por el monitor serial
+        estadoServicio = true;
+        digitalWrite(indicadorOn,HIGH);
+        break;    
+        
+      case 'c': // Test actuadores
+        estadoServicio = false;
+        digitalWrite(indicadorOn,LOW);
+        testActuadores();              
+        break;    
+      
+        
+
+        
+      
+      }
+    
   }
 
   
 }
 
-void cambiarEstado(){
-  estado = !estado;
-  if(estado){
-    digitalWrite(actuador1,LOW);
+void cambiarEstadoServicio(){
+  estadoServicio = !estadoServicio;
+  if(estadoServicio){
+    digitalWrite(indicadorOn,HIGH);
   }else{
-    digitalWrite(actuador1,HIGH);
+    digitalWrite(indicadorOn,LOW);
+  }
+}
+
+
+void controlManual(int color, int intensidad){
+  
+}
+
+
+void apagarActuadores(){
+  digitalWrite(actuador1,HIGH);
+  digitalWrite(actuador2,HIGH);
+  digitalWrite(actuador3,HIGH);
+}
+
+void encenderActuadores(){
+  digitalWrite(actuador1,LOW);
+  digitalWrite(actuador2,LOW);
+  digitalWrite(actuador3,LOW);
+}
+
+void testActuadores(){
+ for(int i=0; i<3; i++){
+    apagarActuadores();
+    delay(250);
+    encenderActuadores();
+    delay(250);  
+    apagarActuadores();
   }
 }

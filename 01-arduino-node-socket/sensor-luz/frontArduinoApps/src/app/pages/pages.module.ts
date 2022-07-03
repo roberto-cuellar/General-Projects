@@ -4,6 +4,7 @@ import { LuminosidadComponent } from './luminosidad/luminosidad.component';
 import { TemperaturaComponent } from './temperatura/temperatura.component';
 import { VigilanciaComponent } from './vigilancia/vigilancia.component';
 import { LuminosidadTutorialComponent } from './luminosidad-tutorial/luminosidad-tutorial.component';
+import { MaterialModulesModule } from '../material-modules/material-modules.module';
 
 
 
@@ -15,7 +16,8 @@ import { LuminosidadTutorialComponent } from './luminosidad-tutorial/luminosidad
     LuminosidadTutorialComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModulesModule
   ],
   exports: [
     LuminosidadComponent,

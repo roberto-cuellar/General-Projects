@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mainbar',
@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class MainbarComponent implements OnInit {
+
+  @Input('showSidebar') showSidebar !: boolean;
+  @Input('sidebarMode') sidebarMode !: string;
+  @Output() ocultarSidebar: EventEmitter<boolean> = new EventEmitter();
+
+  toggleSidebar(){
+    this.ocultarSidebar.emit();
+  }
 
   constructor() { }
 

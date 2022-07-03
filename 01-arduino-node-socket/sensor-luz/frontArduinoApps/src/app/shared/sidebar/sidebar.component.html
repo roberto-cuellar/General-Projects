@@ -1,1 +1,36 @@
-<p>sidebar works!</p>
+<mat-accordion >
+    <mat-expansion-panel >
+        <mat-expansion-panel-header >
+            <mat-panel-title >
+                Controles Remotos
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        
+            <a  mat-button
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}"
+        >Luminosidad</a>
+        <a  mat-button
+            routerLink="temperatura"
+            routerLinkActive="active"
+        >temperatura</a>
+        
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Tutoriales
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Luminosidad</p>
+    </mat-expansion-panel>
+
+
+                <a  
+                    color="primary"
+                    mat-raised-button
+                    routerLink=""
+            >Contacto</a>
+
+</mat-accordion>

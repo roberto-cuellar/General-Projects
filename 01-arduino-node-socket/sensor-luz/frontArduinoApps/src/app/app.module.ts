@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { LuminosidadComponent } from './pages/luminosidad/luminosidad.component';
 import { PagesModule } from './pages/pages.module';
+import { MaterialModulesModule } from './material-modules/material-modules.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PagesModule } from './pages/pages.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    PagesModule
+    PagesModule,
+    MaterialModulesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

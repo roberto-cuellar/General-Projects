@@ -1,1 +1,25 @@
-<p>mainbar works!</p>
+<mat-toolbar>
+        <div *ngIf="sidebarMode === 'over'" >
+        <button 
+                *ngIf="!showSidebar" 
+                mat-mini-fab 
+                color="primary" 
+                aria-label="Example icon button with a menu icon"
+                (click)="toggleSidebar()"
+        >
+                <mat-icon>menu</mat-icon>
+        </button>
+        <button 
+                *ngIf="showSidebar" 
+                mat-mini-fab 
+                color="primary" 
+                aria-label="Example icon button with a menu icon"
+                (click)="toggleSidebar()"
+        >
+                <mat-icon material-icons-round>hide_source</mat-icon>
+        </button>
+        </div>
+        <span>Arduino Apps</span>
+
+</mat-toolbar>
+

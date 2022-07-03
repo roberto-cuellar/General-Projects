@@ -1,4 +1,28 @@
-<app-mainbar id="mainbar"></app-mainbar>
-<app-sidebar id="sidebar"></app-sidebar>
-<router-outlet id="router-outlet"></router-outlet>
-<app-footer id="footer"></app-footer>
+<app-mainbar id="mainbar" [showSidebar] = 'drawer.opened' (ocultarSidebar)="drawer.toggle()" [sidebarMode] = 'drawer.mode'></app-mainbar>
+
+<mat-drawer-container multi>
+  <mat-drawer #drawer >
+    <app-sidebar id="sidebar"></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button> -->
+    <!-- <p>{{drawer.opened}}</p> -->
+    <router-outlet id="router-outlet"></router-outlet>
+    <app-footer></app-footer>
+  </mat-drawer-content>
+ 
+  <!-- <mat-sidenav mode="side" opened="">
+    <app-sidebar id="sidebar"></app-sidebar>
+    holi
+  </mat-sidenav>
+  <mat-drawer-content>
+    <router-outlet id="router-outlet"></router-outlet>
+    <div class="content">Main Content</div>
+  </mat-drawer-content> -->
+
+</mat-drawer-container>
+
+
+<!-- <app-footer id="footer"></app-footer> -->

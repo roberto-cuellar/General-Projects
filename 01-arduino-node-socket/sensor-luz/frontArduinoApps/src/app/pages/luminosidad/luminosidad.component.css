@@ -1,0 +1,92 @@
+
+/* Estilos del header ------------ */
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.header-text{
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.header-data{
+    align-self: center;
+    padding: 10px;
+    flex-grow: 2;
+    text-align: center;
+}
+
+.flex-container .correcto{
+    color: rgb(76, 228, 76);
+    font-weight: 500;
+}
+
+.flex-container .tipo-funcionamiento{
+    color: rgb(241, 238, 44);
+    font-weight: 500;
+}
+
+.principal-card{
+    background-color: rgb(89, 114, 114);
+}
+
+h3{
+    padding-left: 12px;
+}
+
+/* Servicio desde el backend */
+.card-action-center{
+    text-align: center;
+    height: 10px;
+}
+
+.card-footer-center{
+    text-align: center;
+}
+
+.card-footer-center button{
+    width: 100%;
+}
+
+.card-servicio{
+    padding: 25px;
+}
+
+.val-referencia{
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.card-action-center button{
+    height: 30px;
+}
+
+.icons-servicio{
+    margin-top: -7px;
+}
+
+
+.servicio{
+    flex-grow: 4;
+}
+
+.servicio-container{
+    gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Historiales */
+.historial-img-luminosidad{
+    width: 100%;
+    border-radius: 4px;
+}
+
+.group-button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}

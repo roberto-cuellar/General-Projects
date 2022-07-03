@@ -6,6 +6,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+
+
 
 
 
@@ -19,8 +28,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
+    MatExpansionModule,
+    MatCardModule,
     MatDividerModule,
-    MatExpansionModule
+    MatProgressBarModule,
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    MatFormFieldModule
   ],
   exports: [
     MatToolbarModule,
@@ -28,7 +42,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule,
+    MatProgressBarModule,
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModulesModule { }

@@ -1,1 +1,136 @@
-<p>luminosidad works!</p>
+<div class="container">
+    <mat-toolbar color="warn" class="pagina">
+        <span >Luminosidad</span>
+    </mat-toolbar>
+    <div class="flex-container">
+        <div class="header-text">
+            <mat-card class="principal-card" >
+                <mat-card-title>800</mat-card-title>
+                <mat-divider inset></mat-divider>
+                <mat-card-actions>
+                    <p>0/1024</p>
+                </mat-card-actions>
+                <mat-card-footer>
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </mat-card-footer>
+
+            </mat-card>
+        </div>
+        <div class="header-data">
+            <p>Estado: <span class="correcto">Midiendo</span></p>
+            <p>Tipo de Funcionamiento: <span class="tipo-funcionamiento">Automático</span></p>
+        </div>
+    </div>
+
+    <!-- Servicio desde el backend -->
+    <mat-divider inset></mat-divider>
+    <h3>Servicio</h3>
+    <div class="flex-container servicio-container">
+        
+            <mat-card class="card-servicio servicio">
+                <mat-card-title>Estado</mat-card-title>
+                <mat-divider inset></mat-divider>
+                <mat-card-actions class="card-action-center">
+                    <span class="correcto">Midiendo</span>
+                </mat-card-actions>
+                <mat-card-footer class="card-footer-center">
+                    <button mat-raised-button color="accent">Finalizar</button>
+                </mat-card-footer>
+            </mat-card>
+
+            <mat-card class="card-servicio servicio">
+                <mat-card-title>Funcionamiento</mat-card-title>
+                <mat-divider inset></mat-divider>
+                <mat-card-actions class="card-action-center">
+                    <span class="tipo-funcionamiento">Automático</span>
+                </mat-card-actions>
+                <mat-card-footer class="card-footer-center">
+                    <button mat-raised-button color="accent">Cambiar a Manual</button>
+                </mat-card-footer>
+            </mat-card>
+
+            <mat-card class="card-servicio servicio">
+                <mat-card-title>Valor de Referencia</mat-card-title>
+                <mat-divider inset></mat-divider>
+                <mat-card-actions class="card-action-center val-ref-footer">
+                    <button mat-raised-button color="accent" disabled><mat-icon class="icons-servicio">remove_circle</mat-icon></button>
+                    <span class="val-referencia">800</span>
+                    <button mat-raised-button color="accent" disabled><mat-icon class="icons-servicio">add_circle</mat-icon></button>
+                </mat-card-actions>
+                <mat-card-footer class="card-footer-center ">
+                    <button mat-raised-button color="accent">Activar Cambios Manuales</button>
+                </mat-card-footer>
+            </mat-card>
+    </div>
+
+    <!-- Actuadores -->
+    <h3>Actuadores</h3>
+    <mat-divider inset></mat-divider>
+    <div class="flex-container servicio-container">
+        
+            <mat-card class="card-servicio servicio">
+                <mat-card-title>Actuador 1</mat-card-title>
+                <mat-divider inset></mat-divider>
+                <mat-card-actions class="card-action-center">
+                    <p>Valor: <span>125</span></p>
+                </mat-card-actions>
+                <mat-card-footer class="card-footer-center">
+                    <button mat-raised-button color="accent">Finalizar</button>
+                </mat-card-footer>
+            </mat-card>
+
+    </div>
+
+    <!-- Historial -->
+    <h3>Historial</h3>
+    <div class="group-button">
+        <h4>Seleccione la escala temporal: </h4>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="horas">Horas</mat-button-toggle>
+            <mat-button-toggle value="mins">Mins</mat-button-toggle>
+            <mat-button-toggle value="segundos">Segundos</mat-button-toggle>
+          </mat-button-toggle-group>
+    </div>
+    <div class="flex-container servicio-container">
+        <mat-card class="card-servicio servicio">
+            <mat-card-header>
+                <mat-card-title>Luminosidad</mat-card-title>
+            </mat-card-header>
+            <img 
+                mat-card-image 
+                class="historial-img-luminosidad" 
+                src="https://www.labbulletin.com/design/Variation%20of%20the%20Photoluminescence%20Quantum%20Yield%20of%20CsPbBr3%20Perovskite%20with%20Temperature.jpg" 
+                alt="Photo of a Shiba Inu">
+            <mat-divider inset></mat-divider>
+            <mat-card-actions class="card-action-center">
+
+            </mat-card-actions>
+            <mat-card-footer class="card-footer-center">
+                <button mat-raised-button color="accent">Descargar Historial</button>
+            </mat-card-footer>
+        </mat-card>
+
+        <mat-card class="card-servicio servicio">
+            <mat-card-header>
+                <mat-card-title>Actuador 1</mat-card-title>
+            </mat-card-header>
+            <img
+                mat-card-image 
+                class="historial-img-luminosidad" 
+                src="https://www.researchgate.net/profile/Alexei-Kamshilin/publication/322667755/figure/fig1/AS:586754771927040@1516904647119/Typical-PPG-waveform-Evolution-of-the-remitted-light-intensity-from-an-area-of-17-17.png" 
+                alt="Photo of a Shiba Inu">
+            <mat-divider inset></mat-divider>
+            <mat-card-actions class="card-action-center">
+                
+            </mat-card-actions>
+            <mat-card-footer class="card-footer-center">
+                <button mat-raised-button color="accent">Descargar Historial</button>
+            </mat-card-footer>
+        </mat-card>
+
+    </div>
+
+    <button mat-stroked-button (click)="openSnackBar()">Estado Socket</button>
+
+    
+</div>

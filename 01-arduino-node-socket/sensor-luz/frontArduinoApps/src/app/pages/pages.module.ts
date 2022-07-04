@@ -6,6 +6,8 @@ import { VigilanciaComponent } from './vigilancia/vigilancia.component';
 import { LuminosidadTutorialComponent } from './luminosidad-tutorial/luminosidad-tutorial.component';
 import { MaterialModulesModule } from '../material-modules/material-modules.module';
 import { ComponentsModule } from '../components/components.module';
+import { NgChartsModule } from 'ng2-charts';
+
 
 
 
@@ -20,7 +22,8 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     CommonModule,
     MaterialModulesModule,
-    ComponentsModule
+    ComponentsModule,
+    NgChartsModule
   ],
   exports: [
     LuminosidadComponent,

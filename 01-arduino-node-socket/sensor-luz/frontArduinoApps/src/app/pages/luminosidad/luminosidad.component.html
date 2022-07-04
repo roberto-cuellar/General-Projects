@@ -92,7 +92,17 @@
           </mat-button-toggle-group>
     </div>
     <div class="flex-container servicio-container">
-        <mat-card class="card-servicio servicio">
+        <div style="display: block;">
+            <canvas 
+                baseChart
+                [width]="innerWidth" 
+                height="1000"
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [type]="lineChartType"
+            ></canvas>
+        </div>
+        <!-- <mat-card class="card-servicio servicio">
             <mat-card-header>
                 <mat-card-title>Luminosidad</mat-card-title>
             </mat-card-header>
@@ -126,7 +136,7 @@
             <mat-card-footer class="card-footer-center">
                 <button mat-raised-button color="accent">Descargar Historial</button>
             </mat-card-footer>
-        </mat-card>
+        </mat-card> -->
 
     </div>
 
